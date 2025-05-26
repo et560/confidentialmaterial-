@@ -12,8 +12,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
+      justify-content: flex-start;
+      padding-top: 50px;
+      min-height: 100vh;
       margin: 0;
     }
     h1 {
@@ -65,7 +66,9 @@
     function checkCode() {
       const input = document.getElementById('code').value;
       if (input === '171201') {
-        document.getElementById('access-granted').style.display = 'block';
+        const granted = document.getElementById('access-granted');
+        granted.style.display = 'block';
+        granted.scrollIntoView({ behavior: 'smooth' });
       } else {
         alert('ACCESS DENIED');
       }
